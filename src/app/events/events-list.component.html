@@ -1,0 +1,9 @@
+ <div>
+   <h1>Upcoming Angular Events</h1>
+   <hr>
+
+   <app-event-thumbnail #thumbnail (eventClick)="handleClickMe($event)" [events]="events"></app-event-thumbnail>
+
+   <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log some</button>
+
+ </div>
