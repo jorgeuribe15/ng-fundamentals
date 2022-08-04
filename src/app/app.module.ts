@@ -9,6 +9,7 @@ import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CreateEventComponent } from './events/create-event.component';
 
 
 
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     EventThumbnailComponent,
     NavComponent,
     EventDetailsComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
