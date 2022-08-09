@@ -7,15 +7,13 @@ import { Router } from "@angular/router";
     templateUrl: './create-event.component.html'
 })
 
-export class CreateEventComponent implements OnInit {
+export class CreateEventComponent {
 
     isDirty: boolean = true;
     constructor(private router: Router) {
     }
 
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
+
 
     cancel() {
         this.router.navigate(['/events']);

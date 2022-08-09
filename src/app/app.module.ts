@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
+import { ProfileComponent } from './user/profile.component';
 
 
 
