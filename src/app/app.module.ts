@@ -13,6 +13,7 @@ import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { ProfileComponent } from './user/profile.component';
+import { AuthService } from './user/auth.service';
 
 
 
@@ -24,7 +25,8 @@ import { ProfileComponent } from './user/profile.component';
     NavComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { ProfileComponent } from './user/profile.component';
   providers: [
     EventService,
     ToastrService,
+    AuthService,
     EventRouteActivator,
     {
       provide: 'canDeactivateCreateEvent',
