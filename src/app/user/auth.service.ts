@@ -12,7 +12,7 @@ export class AuthService {
         this.currentUser = {
             id: 1,
             userName: 'juribe',
-            firstName: 'Jorge',
+            firstName: 'Luis',
             lastName: 'Uribe'
         }
 
