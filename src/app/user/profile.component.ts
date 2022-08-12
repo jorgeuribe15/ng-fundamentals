@@ -8,7 +8,6 @@ import { AuthService } from './auth.service'
   styles: [`
     em {  float:right; color:#E05C65; padding-left: 10px;}
     .error input {background-color: #e3c3c5 }
-
     `]
 })
 
