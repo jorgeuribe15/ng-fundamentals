@@ -16,6 +16,7 @@ import { ProfileComponent } from './user/profile.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
+import { SessionListComponent } from './events/event-details/session-list.component';
 
 
 
@@ -29,6 +30,7 @@ import { CreateSessionComponent } from './events/event-details/create-session.co
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
