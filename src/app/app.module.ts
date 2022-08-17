@@ -6,7 +6,8 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './events/shared/event.service';
-import { ToastrService } from './common/toastr.service';
+import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
+// import { TOASTR_TOKEN as TOASTR_TOKEN2} from './common/toastr.service'; // ANOTHER TOKEN ejemplo
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './events/create-event.component';
@@ -19,7 +20,7 @@ import { CreateSessionComponent } from './events/event-details/create-session.co
 import { SessionListComponent } from './events/event-details/session-list.component';
 import { DurationPipe } from './events/shared/duration.pipe';
 
-
+declare let toastr: Toastr
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { DurationPipe } from './events/shared/duration.pipe';
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr }, // new DI registration
     AuthService,
     EventRouteActivator,
     {
