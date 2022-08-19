@@ -44,15 +44,29 @@
           <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control"
             placeholder="Search Events">
         </div>
-        <button class="btn btn-default">
+
+        <button class="btn btn-default" modal-trigger="searchResults">
           Search
         </button>
+
+        <button class="btn btn-danger" modal-trigger="searchItems">
+          Search Items
+        </button>
+
       </form>
     </div>
   </div>
 </div>
 
-<simple-modal title="Matching-Sessions">
+<simple-modal elementId="searchResults" title="Matching Sessions">
+  <div class="list-group">
+    <a class="list-group-item" *ngFor="let session of foundSessions" [routerLink]="['/events', session.eventId]">
+      {{session.name}}</a>
+  </div>
+</simple-modal>
+
+<!-- Ver como meidiante la opcion @directive funcionan los modales [common/modalTrigger.directive.ts]-->
+<simple-modal elementId="searchItems" title="Items List">
   <div class="list-group">
     <a class="list-group-item" *ngFor="let session of foundSessions" [routerLink]="['/events', session.eventId]">
       {{session.name}}</a>

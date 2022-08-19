@@ -7,7 +7,7 @@ import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnai
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './events/shared/event.service';
 //import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
-import { JQ_TOKEN, TOASTR_TOKEN, Toastr } from './common/index';
+import { JQ_TOKEN, TOASTR_TOKEN, Toastr, SimpleModalComponent, ModalTriggerDirective } from './common/index';
 // import { TOASTR_TOKEN as TOASTR_TOKEN2} from './common/toastr.service'; // ANOTHER TOKEN ejemplo
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { SessionListComponent } from './events/event-details/session-list.component';
 import { DurationPipe } from './events/shared/duration.pipe';
-import { SimpleModalComponent } from './common/simpleModal.component';
+
 
 // declare let toastr: Toastr
 let toastr: Toastr = window['toastr']
@@ -38,7 +38,8 @@ let jQuery = window['$']
     CreateSessionComponent,
     SessionListComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
