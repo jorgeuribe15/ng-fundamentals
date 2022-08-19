@@ -6,7 +6,8 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './events/shared/event.service';
-import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
+//import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
+import { JQ_TOKEN, TOASTR_TOKEN, Toastr } from './common/index';
 // import { TOASTR_TOKEN as TOASTR_TOKEN2} from './common/toastr.service'; // ANOTHER TOKEN ejemplo
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,8 +20,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { SessionListComponent } from './events/event-details/session-list.component';
 import { DurationPipe } from './events/shared/duration.pipe';
+import { SimpleModalComponent } from './common/simpleModal.component';
 
-declare let toastr: Toastr
+// declare let toastr: Toastr
+let toastr: Toastr = window['toastr']
+let jQuery = window['$']
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ declare let toastr: Toastr
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ declare let toastr: Toastr
   ],
   providers: [
     EventService,
+    { provide: JQ_TOKEN, useValue: jQuery },
     { provide: TOASTR_TOKEN, useValue: toastr }, // new DI registration
     AuthService,
     EventRouteActivator,
